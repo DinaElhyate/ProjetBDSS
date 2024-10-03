@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Résultats de Recherche</title>
+</head>
+<body>
+<h1>Résultats de Recherche</h1>
+
+<div th:if="${noClasseFound}">
+    <p th:text="${noClasseFound}"></p>
+</div>
+
+<ul>
+    <!-- Utilisez la liste 'recettes' directement -->
+    <li th:each="recette : ${recettes}">
+        <h3 th:text="${recette.titre}"></h3>
+        <p th:text="${recette.id}"></p>
+        <p th:text="${recette.description}"></p>
+        <p>Duree de preparation: <span th:text="${recette.dureePreparation}"></span></p>
+        <p>Duree de cuisson: <span th:text="${recette.dureeCuisson}"></span></p>
+        <p>Difficulté: <span th:text="${recette.difficulte}"></span></p>
+        <p>Type de cuisine: <span th:text="${recette.typeCuisine}"></span></p>
+        <p>Date de publication: <span th:text="${recette.datePub}"></span></p>
+        <hr />
+    </li>
+</ul>
+
+
+</body>
+</html>

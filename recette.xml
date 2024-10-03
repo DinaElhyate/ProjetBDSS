@@ -1,0 +1,20 @@
+<recettes>
+<recette>
+  <id>3</id>
+  <titre>Salade César - Version 2</titre>
+  <description>Une autre variante de la salade César avec des ingrédients différents.</description>
+  <dureePreparation>10 minutes</dureePreparation>
+  <dureeCuisson>0 minutes</dureeCuisson>
+  <difficulte>Facile</difficulte>
+  <typeCuisine>Américaine</typeCuisine>
+  <datePub>2024-09-26</datePub>
+</recette><recette>
+  <id>11</id>
+  <titre>sihamamalou  </titre>
+  <description>Une dé</description>
+  <dureePreparation>15 minutes</dureePreparation>
+  <dureeCuisson>70 minutes</dureeCuisson>
+  <difficulte>Fa</difficulte>
+  <typeCuisine>Fran</typeCuisine>
+  <datePub>2024-10-341</datePub>
+</recette></recettes>
