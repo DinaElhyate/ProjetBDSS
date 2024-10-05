@@ -21,6 +21,8 @@
         <p>Difficulté: <span th:text="${recette.difficulte}"></span></p>
         <p>Type de cuisine: <span th:text="${recette.typeCuisine}"></span></p>
         <p>Date de publication: <span th:text="${recette.datePub}"></span></p>
+        <p th:if="${recette.image != null}">image: <span th:text="${recette.image}"></span></p>
+        <p>user id: <span th:text="${recette.userId}"></span></p>
         <hr />
     </li>
 </ul>

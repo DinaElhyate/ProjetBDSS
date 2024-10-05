@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tableau de Bord</title>
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Lien vers vos styles CSS -->
+</head>
+<body>
+<div class="container">
+    <h1>Bienvenue, <span th:text="${utilisateur.fullName}">Utilisateur</span>!</h1>
+
+    <div>
+        <h2>Détails de l'utilisateur</h2>
+        <p>Email: <span th:text="${utilisateur.email}">email@example.com</span></p>
+        <p>Niveau de Spécialité: <span th:text="${utilisateur.niveauDeSpecialite}">Niveau</span></p>
+    </div>
+
+
+</div>
+
+<!-- Messages d'erreur ou de succès -->
+<div th:if="${errorMessage}" class="alert alert-danger">
+    <p th:text="${errorMessage}"></p>
+</div>
+</body>
+</html>

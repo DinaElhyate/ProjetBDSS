@@ -1,5 +1,4 @@
 package com.udb.m1.projet.web.xml.controller;
-
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,8 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
-
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -23,11 +20,9 @@ import java.util.List;
 public class RecetteController {
 
     private final RecetteServiceImpl recetteService;
-
     public RecetteController(RecetteServiceImpl recetteService) {
         this.recetteService = recetteService;
     }
-
     // Méthode pour afficher toutes les recettes
     @GetMapping
     public String index(Model model) {
@@ -58,7 +53,7 @@ public class RecetteController {
         }
         return "recette/suppression";
     }
-////ajouter une recette
+    ////ajouter une recette
     @PostMapping("/add")
     public String addRecette(@RequestBody Recette recette, RedirectAttributes redirectAttributes) {
         try {
@@ -71,17 +66,16 @@ public class RecetteController {
         return "redirect:/recettes"; // Redirige vers la liste des recettes ou la page d'accueil
     }
 
-//// la modification des champs
-@PostMapping("/update/{id}")
-public String updateRecette(@PathVariable Long id, @RequestBody Recette newRecette, RedirectAttributes redirectAttributes) {
-    try {
+       //// la modification des champs
+     @PostMapping("/update/{id}")
+      public String updateRecette(@PathVariable Long id, @RequestBody Recette newRecette, RedirectAttributes redirectAttributes) {
+     try {
         // Récupérer la recette existante par son ID
         Recette existingRecette = recetteService.findRecetteById(id);
         if (existingRecette == null) {
             redirectAttributes.addFlashAttribute("errorMessage", "Recette non trouvée.");
             return "redirect:/recettes"; // Redirection si la recette n'existe pas reccettes est une page html qui existe dans templates
         }
-
         // Mettre à jour les champs de la recette existante avec ceux de la nouvelle recette
         existingRecette.setTitre(newRecette.getTitre());
         existingRecette.setDescription(newRecette.getDescription());
@@ -90,11 +84,10 @@ public String updateRecette(@PathVariable Long id, @RequestBody Recette newRecet
         existingRecette.setDifficulte(newRecette.getDifficulte());
         existingRecette.setTypeCuisine(newRecette.getTypeCuisine());
         existingRecette.setDatePub(newRecette.getDatePub());
-
-
+         existingRecette.setImage(newRecette.getImage());
+         existingRecette.setUserId(newRecette.getUserId());
         // Ajouter ou sauvegarder la nouvelle recette mise à jour (avec le même ID)
         recetteService.addRecetteupdate(existingRecette);
-
         // Supprimer l'ancienne recette (optionnel si vous souhaitez supprimer explicitement)
         recetteService.deleteRecette(id);
 
@@ -106,12 +99,4 @@ public String updateRecette(@PathVariable Long id, @RequestBody Recette newRecet
 
     return "redirect:/recettes";
 }
-
-
-
-
-
-
-
-
 }

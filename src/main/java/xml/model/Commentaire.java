@@ -7,6 +7,7 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 public class Commentaire {
     private int commentaireId;
     private int utilisateurId;
+    private int recetteId;
     private String contenu;
     private String date;
 
@@ -26,6 +27,15 @@ public class Commentaire {
 
     public void setUtilisateurId(int utilisateurId) {
         this.utilisateurId = utilisateurId;
+    }
+
+    @XmlElement(name = "recetteId")
+    public int getRecetteId() {
+        return recetteId;
+    }
+
+    public void setRecetteId(int recetteId) {
+        this.recetteId = recetteId;
     }
 
     @XmlElement(name = "contenu")

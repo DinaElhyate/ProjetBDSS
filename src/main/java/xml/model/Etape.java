@@ -7,6 +7,7 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 public class Etape {
     private int numeroEtape;
     private String instruction;
+    private int recetteId;
 
     @XmlElement(name = "numeroEtape")
     public int getNumeroEtape() {
@@ -24,5 +25,14 @@ public class Etape {
 
     public void setInstruction(String instruction) {
         this.instruction = instruction;
+    }
+
+    @XmlElement(name = "recetteId") // Ajout de la méthode pour la clé étrangère
+    public int getRecetteId() {
+        return recetteId;
+    }
+
+    public void setRecetteId(int recetteId) {
+        this.recetteId = recetteId;
     }
 }

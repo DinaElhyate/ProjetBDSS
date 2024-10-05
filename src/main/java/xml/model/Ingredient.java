@@ -8,6 +8,7 @@ public class Ingredient {
     private int ingredientId;
     private int quantite;
     private String unit;
+    private int recetteId; // Champ pour la clé étrangère
 
     @XmlElement(name = "ingredientId")
     public int getIngredientId() {
@@ -34,5 +35,14 @@ public class Ingredient {
 
     public void setUnit(String unit) {
         this.unit = unit;
+    }
+
+    @XmlElement(name = "recetteId") // Ajoutez cette annotation pour le champ recetteId
+    public int getRecetteId() {
+        return recetteId;
+    }
+
+    public void setRecetteId(int recetteId) {
+        this.recetteId = recetteId;
     }
 }

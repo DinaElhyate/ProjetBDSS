@@ -31,10 +31,28 @@ public class Recette {
     @JsonProperty("datePub")
     private String datePub;
 
+    @JsonProperty("image")
+        private String  image;
+
+      @JsonProperty("userId")
+            private Long userId;
+
     // Getters et Setters
     @XmlElement(name = "id")
     public Long getId() {
         return id;
+    }
+
+
+
+  @XmlElement(name = "image")
+    public String getImage() {
+        return image;
+    }
+
+    // Setter for image
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public void setId(Long id) {
@@ -104,7 +122,17 @@ public class Recette {
         this.datePub = datePub;
     }
 
+       @XmlElement(name = "userId")
+        public Long getUserId() {
+            return userId;
+        }
+
+        public void setUserId(Long userId) {
+            this.userId = userId;
+        }
+
     @Override
+
     public String toString() {
         return "Recette{" +
                 "id=" + id +
@@ -115,6 +143,9 @@ public class Recette {
                 ", difficulte='" + difficulte + '\'' +
                 ", typeCuisine='" + typeCuisine + '\'' +
                 ", datePub='" + datePub + '\'' +
+                ", image='" + image + '\'' + // Include image
+                ", userId=" + userId + // Include userId
                 '}';
     }
+
 }

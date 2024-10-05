@@ -1,20 +1,21 @@
-<recettes>
-<recette>
-  <id>3</id>
-  <titre>Salade César - Version 2</titre>
-  <description>Une autre variante de la salade César avec des ingrédients différents.</description>
-  <dureePreparation>10 minutes</dureePreparation>
-  <dureeCuisson>0 minutes</dureeCuisson>
-  <difficulte>Facile</difficulte>
-  <typeCuisine>Américaine</typeCuisine>
-  <datePub>2024-09-26</datePub>
-</recette><recette>
-  <id>11</id>
-  <titre>sihamamalou  </titre>
-  <description>Une dé</description>
-  <dureePreparation>15 minutes</dureePreparation>
-  <dureeCuisson>70 minutes</dureeCuisson>
-  <difficulte>Fa</difficulte>
-  <typeCuisine>Fran</typeCuisine>
-  <datePub>2024-10-341</datePub>
-</recette></recettes>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><donnees>
+  <recettes><recette><id>3</id><titre>Salade César - Version 2</titre><description>Une autre variante de la salade César avec des ingrédients différents.</description><dureePreparation>10 minutes</dureePreparation><dureeCuisson>0 minutes</dureeCuisson><difficulte>Facile</difficulte><typeCuisine>Américaine</typeCuisine><datePub>2024-09-26</datePub><image>iamge.jpg</image><userId>1</userId></recette><recette><id>6</id><titre>Soupe de légumes</titre><description>Une délicieuse soupe faite avec des légumes frais.</description><dureePreparation>15 minutes</dureePreparation><dureeCuisson>30 minutes</dureeCuisson><difficulte>Facile</difficulte><typeCuisine>Française</typeCuisine><datePub>2024-10-01</datePub><image>image</image><userId>2</userId></recette><recette><id>7</id><titre>Soupe fish</titre><description>Une délicieuse soupe faite avec des légumes frais.</description><dureePreparation>15 minutes</dureePreparation><dureeCuisson>30 minutes</dureeCuisson><difficulte>Facile</difficulte><typeCuisine>França</typeCuisine><datePub>2024-10-01</datePub><image>ima</image><userId>2</userId></recette><recette><id>8</id><titre>légumes</titre><description> soupe faite avec .</description><dureePreparation>15 minutes</dureePreparation><dureeCuisson>30 minutes</dureeCuisson><difficulte>Facile</difficulte><typeCuisine>Française</typeCuisine><datePub>2024-10-01</datePub><image>image</image><userId>1</userId></recette></recettes>
+
+  <utilisateurs>
+    <utilisateur>
+      <id>1</id>
+      <fullName>John Doe</fullName>
+      <email>john.doe@example.com</email>
+      <niveauDeSpecialite>Expert</niveauDeSpecialite>
+      <password>password123</password>
+    </utilisateur>
+    <utilisateur>
+      <id>2</id>
+      <fullName>Jane Smith</fullName>
+      <email>jane.smith@example.com</email>
+      <niveauDeSpecialite>Expert</niveauDeSpecialite>
+      <password>password456</password>
+    </utilisateur>
+  </utilisateurs>
+
+</donnees>
