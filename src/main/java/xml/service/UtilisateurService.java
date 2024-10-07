@@ -1,6 +1,6 @@
-package com.udb.m1.projet.web.xml.service;
+package xml.service;
 
-import com.udb.m1.projet.web.xml.model.Utilisateur;
+import xml.model.Utilisateur;
 
 public interface UtilisateurService {
 

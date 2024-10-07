@@ -1,7 +1,7 @@
-package com.udb.m1.projet.web.xml.controller;
+package xml.controller;
 
-import com.udb.m1.projet.web.xml.model.Utilisateur;
-import com.udb.m1.projet.web.xml.service.UtilisateurServiceImpl;
+import xml.model.Utilisateur;
+import xml.service.UtilisateurServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

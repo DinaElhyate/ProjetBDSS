@@ -1,7 +1,7 @@
-package com.udb.m1.projet.web.xml.service;
+package xml.service;
 
-import com.udb.m1.projet.web.xml.model.Utilisateur;
-import com.udb.m1.projet.web.xml.model.Utilisateurs;
+import xml.model.Utilisateur;
+import xml.model.Utilisateurs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
@@ -18,7 +18,7 @@ public class UtilisateurServiceImpl {
     private static final String XML_FILE_PATH = "./recette.xml";
 
     @Autowired
-    public UtilisateurServiceImpl(XMLService1 xmlService) {
+    public UtilisateurServiceImpl(xml.service.XMLService1 xmlService) {
         this.xmlService = xmlService;
     }
 

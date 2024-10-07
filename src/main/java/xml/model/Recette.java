@@ -1,4 +1,4 @@
-package com.udb.m1.projet.web.xml.model;
+package xml.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.xml.bind.annotation.XmlElement;

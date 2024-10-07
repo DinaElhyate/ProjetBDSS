@@ -1,9 +1,9 @@
-package com.udb.m1.projet.web.xml.service;
+package xml.service;
 
-import com.udb.m1.projet.web.xml.model.Recette;
-import com.udb.m1.projet.web.xml.model.Recettes;
-import com.udb.m1.projet.web.xml.model.Utilisateurs;
-import com.udb.m1.projet.web.xml.model.Utilisateur;
+import xml.model.Recette;
+import xml.model.Recettes;
+import xml.model.Utilisateurs;
+import xml.model.Utilisateur;
 import com.thoughtworks.xstream.XStream;
 
 import org.slf4j.Logger;
@@ -245,14 +245,21 @@ public class RecetteServiceImpl {
     }
 
  // la mise ajour d'une recette
-    public void addRecetteupdate(Recette recette) {
+ public void updateRecette(Long id, Recette updatedRecette) {
+     List<Recette> recettes = loadRecettes();
+     Optional<Recette> existingRecette = recettes.stream()
+             .filter(r -> r.getId().equals(id))
+             .findFirst();
 
-        if (!isUserIdValid(recette.getUserId())) {
-            throw new IllegalArgumentException("L'ID d'utilisateur spécifié n'existe pas.");
-        }
-        List<Recette> recettes = loadRecettes();
-        recettes.add(recette); // Ajoutez la recette mise à jour à la liste
-        sauvegarderSectionRecettes(recettes); // Sauvegardez la liste mise à jour
-    }
+     if (existingRecette.isPresent()) {
+         recettes.remove(existingRecette.get());
+         updatedRecette.setId(id); // Assurez-vous que l'ID de la recette mise à jour reste le même
+         recettes.add(updatedRecette);
+         sauvegarderSectionRecettes(recettes);
+     } else {
+         throw new IllegalArgumentException("Recette non trouvée avec l'ID : " + id);
+     }
+ }
+
 
 }

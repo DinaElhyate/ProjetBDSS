@@ -1,18 +1,13 @@
-package com.udb.m1.projet.web.xml.controller;
+package xml.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import com.udb.m1.projet.web.xml.model.Recette;
-import com.udb.m1.projet.web.xml.service.RecetteServiceImpl;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
+import xml.model.Recette;
+import xml.service.RecetteServiceImpl;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/recettes")
 public class RecetteController {
@@ -36,7 +31,8 @@ public class RecetteController {
     }
 
 
-    @GetMapping("/delete/{id}")
+
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> delete(@PathVariable Long id) {
         try {
             recetteService.deleteRecette(id);
@@ -45,6 +41,8 @@ public class RecetteController {
             return ResponseEntity.status(500).body("Erreur lors de la suppression de la recette.");
         }
     }
+
+
 
     @PostMapping("/add")
     public ResponseEntity<String> addRecette(@RequestBody Recette recette) {
@@ -56,7 +54,8 @@ public class RecetteController {
         }
     }
 
-    @PostMapping("/update/{id}")
+
+    @PutMapping("/update/{id}")
     public ResponseEntity<String> updateRecette(@PathVariable Long id, @RequestBody Recette newRecette) {
         try {
             Recette existingRecette = recetteService.findRecetteById(id);
@@ -64,7 +63,7 @@ public class RecetteController {
                 return ResponseEntity.status(404).body("Recette non trouvée.");
             }
 
-
+            // Mettez à jour les champs nécessaires
             existingRecette.setTitre(newRecette.getTitre());
             existingRecette.setDescription(newRecette.getDescription());
             existingRecette.setDureePreparation(newRecette.getDureePreparation());
@@ -75,10 +74,31 @@ public class RecetteController {
             existingRecette.setImage(newRecette.getImage());
             existingRecette.setUserId(newRecette.getUserId());
 
-            recetteService.addRecetteupdate(existingRecette);
+            // Appel à la méthode de mise à jour
+            recetteService.updateRecette(id, existingRecette);
             return ResponseEntity.ok("Recette mise à jour avec succès !");
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Erreur lors de la mise à jour de la recette.");
         }
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Recette> getRecetteById(@PathVariable Long id) {
+        Recette recette = recetteService.findRecetteById(id);
+        if (recette != null) {
+            return ResponseEntity.ok(recette); // Retourne la recette avec un code 200
+        } else {
+            return ResponseEntity.notFound().build(); // Retourne un code 404 si la recette n'est pas trouvée
+        }
+    }
+    @GetMapping("/details/{id}")
+    public ResponseEntity<Recette> getRecetteDetails(@PathVariable Long id) {
+        Recette recette = recetteService.findRecetteById(id);
+        if (recette != null) {
+            return ResponseEntity.ok(recette); // Retourne les détails de la recette
+        } else {
+            return ResponseEntity.notFound().build(); // Retourne un code 404 si la recette n'est pas trouvée
+        }
+    }
+
 }

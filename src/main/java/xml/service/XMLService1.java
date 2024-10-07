@@ -1,4 +1,4 @@
-package com.udb.m1.projet.web.xml.service;
+package xml.service;
 
 import java.io.File;
 import jakarta.xml.bind.JAXBContext;
@@ -8,8 +8,8 @@ import jakarta.xml.bind.Unmarshaller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import com.udb.m1.projet.web.xml.model.Recettes;
-import com.udb.m1.projet.web.xml.model.Utilisateurs;
+import xml.model.Recettes;
+import xml.model.Utilisateurs;
 
 @Service
 public class XMLService1 {

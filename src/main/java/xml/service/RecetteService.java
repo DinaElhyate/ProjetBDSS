@@ -1,6 +1,6 @@
-package com.udb.m1.projet.web.xml.service;
+package xml.service;
 
-import com.udb.m1.projet.web.xml.model.Recette;
+import xml.model.Recette;
 
 import java.util.List;
 
@@ -9,5 +9,6 @@ public interface RecetteService {
     void deleteRecette(Long id);
     void addeRecette(Recette recette);
     Recette findRecetteById(Long id);
-    void addRecetteupdate(Recette recette);
+    void updateRecette(Long id, Recette recette);
+
 }

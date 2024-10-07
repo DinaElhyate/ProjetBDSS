@@ -1,4 +1,4 @@
-package com.udb.m1.projet.web.xml.model;
+package xml.model;
 import java.util.List;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlElementWrapper;
